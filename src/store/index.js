@@ -1,7 +1,9 @@
 import Products from './modules/Products'
+import Cart from './modules/Cart'
 
 export default {
-	modules: { Products },
+	strict: process.env.NODE_ENV !== 'production',
+	modules: { Products, Cart },
 	state: {},
 	getters: {},
 	actions: {},

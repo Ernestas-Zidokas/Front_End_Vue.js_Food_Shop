@@ -1,0 +1,3 @@
+export const SET_CART_ITEM = 'SET_CART_ITEM'
+export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM'
+export const SET_QUANTITY = 'SET_QUANTITY'

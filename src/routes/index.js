@@ -1,3 +1,3 @@
 import ProductsRoutes from './Products'
-
-export default [...ProductsRoutes]
+import CartRoutes from './Cart'
+export default [...ProductsRoutes, ...CartRoutes]

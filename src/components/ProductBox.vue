@@ -13,7 +13,26 @@
       {{ product.description }}
     </p>
     <span class="product-box__price">{{ product.price }} {{ product.currency }}</span>
-    <BaseButton>ADD TO CART</BaseButton>
+    <BaseButton
+      v-if="!count"
+      @click="$emit('addToCart', product)"
+    >
+      ADD TO CART
+    </BaseButton>
+    <div v-else>
+      <button @click="$emit('decreaseCount', product)">
+        -
+      </button>
+      <input
+        :value="count"
+        readonly
+      ><button @click="$emit('increaseCount', product)">
+        +
+      </button>
+    </div>
+    <BaseButton @click="$emit('removeFromCart', product)">
+      REMOVE FROM CART
+    </BaseButton>
     <BaseButton
       @click="$emit('favorite', product)"
     >
@@ -40,6 +59,10 @@ export default {
 				price: null,
 				currency: null
 			})
+		},
+		count: {
+			type: Number,
+			default: 0
 		}
 	},
 	computed: {
