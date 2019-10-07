@@ -1,6 +1,9 @@
+import Products from './modules/Products'
+
 export default {
-	strict: process.env.NODE_ENV !== 'production',
+	modules: { Products },
 	state: {},
-	mutations: {},
-	actions: {}
+	getters: {},
+	actions: {},
+	mutations: {}
 }
